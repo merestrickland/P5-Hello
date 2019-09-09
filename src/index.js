@@ -62,6 +62,11 @@ for(let i = 0; i <= windowHeight; i+=5){
   for (let i = 5; i <= 250; i += 5){
     // line(500, i, i, 0);
     line(500, i, 500+i, 0);
+    line(750-i, 750, 750, 750-i)
+}
+
+for (let i = 250; i>=0; i-=5){
+  line(750, 250-i, 750-i, 250);
 }
 
 // for(var i=0; i<300; i+=5) {
