@@ -1,3 +1,5 @@
+// import './index.styles.scss'
+
 // function setup() {
 //   createCanvas(windowWidth, windowHeight);
 //   background(77, 104, 115)
@@ -14,7 +16,9 @@
 // Within an 80 inch (200cm) square, 10,000 straight lines. Next to it is an 80 inch (200 cm) square with 10,000 not straight lines.
 
 function setup() {
-  createCanvas(1000, 1000);
+  let canvas = createCanvas(1000, 500);
+  canvas.center()
+  
   
   // createCanvas(1024, 768)
   // background(245, 296, 243)
@@ -50,30 +54,29 @@ function draw() {
 //VERTICAL LINES
 for(let x=0; x<250; x+=5) {
   // strokeWeight(3)
-  line(x, 0, x, windowHeight)
+  line(x, 0, x, 500)
 }
 
 //HORIZONTAL LINES
-for(let i = 0; i <= windowHeight; i+=5){
+for(let i = 0; i <= 500; i+=5){
   line(250, i, 500, i)
   }
 
-  //DIAGONAL LINES
-  for (let i = 5; i <= 250; i += 5){
-    // line(500, i, i, 0);
-    line(500, i, 500+i, 0);
-    line(750-i, 750, 750, 750-i)
+//DIAGONAL LINES (#1)
+for (let i = 5; i <= 250; i += 5){
+  line(500, i, 500+i, 0);
+  line(750, 250+i, 500+i, 500)
+  line(500, 250+i, 500+i, 250)
+  line(500+i, 250, 750, i)
 }
 
-for (let i = 250; i>=0; i-=5){
-  line(750, 250-i, 750-i, 250);
+//DIAGONAL LINES (#2)
+
+for (let i=0; i<=250; i+=5) {
+  line(750, i, 1000-i, 250)
+  line(1000-i, 0, 1000, i)
+  line(750, 250+i, 1000-i, 500)
+  line(1000, 250+i, 1000-i, 250)
 }
-
-// for(var i=0; i<300; i+=5) {
-//   line(0, windowWidth/4 + i, windowWidth, i)
-// }
-
-
-
 
 }
