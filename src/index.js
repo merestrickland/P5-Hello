@@ -92,20 +92,34 @@ const diagonalFour = () => {
   }
 }
 
-// vertical()
-// horizontal()
-// diagonalThree()
-// diagonalFour()
+vertical()
+horizontal()
+diagonalThree()
+diagonalFour()
 
-let quadrants = [vertical(), horizontal(), diagonalThree(), diagonalFour()]
 
-for (var i=1; i<=100; i++) {
-  random(quadrants)
+
+
+//want to flash each quadrant randomly and then disappear... 
+
+//clear() ??
+
+// let quadrants = [vertical(), horizontal(), diagonalThree(), diagonalFour()]
+
+// for (var i=1; i<=100; i++) {
+//   random(quadrants)
+// }
+
+
+
+
+
+
 }
 
-
-
-
-
-
+function mousePressed() {
+  fill(0)
+  ellipse(mouseX, mouseY, 20, 20);
+  // prevent default
+  return false;
 }

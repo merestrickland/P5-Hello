@@ -17,7 +17,10 @@ function draw(){
         x+=10
     }
 
+    
     for(let i=0; i<=height; i+=10) {
         ellipse(random(10, width), i, 20, 20)
     }
+
+   
 }
