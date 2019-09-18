@@ -51,6 +51,8 @@ function draw() {
 //Wall Drawing #17 (1969)
 // Four-part drawing with a different line direction in each part.
 
+//Text
+
 //VERTICAL LINES
 for(let x=0; x<250; x+=5) {
   // strokeWeight(3)
