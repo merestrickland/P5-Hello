@@ -18,6 +18,7 @@
 function setup() {
   let canvas = createCanvas(1000, 500);
   canvas.center()
+  frameRate(3)
   
   
   // createCanvas(1024, 768)
@@ -53,32 +54,58 @@ function draw() {
 
 //Text
 
+
 //VERTICAL LINES
-for(let x=0; x<250; x+=5) {
-  // strokeWeight(3)
-  line(x, 0, x, 500)
+const vertical = () => {
+  for(let x=0; x<250; x+=5) {
+    // strokeWeight(3)
+    line(x, 0, x, 500)
+  }
 }
 
-//HORIZONTAL LINES
-for(let i = 0; i <= 500; i+=5){
-  line(250, i, 500, i)
-  }
+// //HORIZONTAL LINES
 
-//DIAGONAL LINES (#1)
-for (let i = 5; i <= 250; i += 5){
-  line(500, i, 500+i, 0);
-  line(750, 250+i, 500+i, 500)
-  line(500, 250+i, 500+i, 250)
-  line(500+i, 250, 750, i)
+const horizontal = () => {
+  for(let i = 0; i <= 500; i+=5){
+    line(250, i, 500, i)
+    }
+}
+
+// //DIAGONAL LINES (#1)
+const diagonalThree = () => {
+  for (let i = 0; i <= 250; i += 5){
+    line(500, i, 500+i, 0);
+    line(750, i, 500+i, 250);
+    line(500, 250+i, 500+i, 250)
+    line(750, 250+i, 500+i, 500)
+    
+  }
 }
 
 //DIAGONAL LINES (#2)
-
-for (let i=0; i<=250; i+=5) {
-  line(750, i, 1000-i, 250)
-  line(1000-i, 0, 1000, i)
-  line(750, 250+i, 1000-i, 500)
-  line(1000, 250+i, 1000-i, 250)
+const diagonalFour = () => {
+  for (let i=0; i<=250; i+=5) {
+    line(750, i, 1000-i, 250)
+    line(1000-i, 0, 1000, i)
+    line(750, 250+i, 1000-i, 500)
+    line(1000, 250+i, 1000-i, 250)
+  }
 }
+
+// vertical()
+// horizontal()
+// diagonalThree()
+// diagonalFour()
+
+let quadrants = [vertical(), horizontal(), diagonalThree(), diagonalFour()]
+
+for (var i=1; i<=100; i++) {
+  random(quadrants)
+}
+
+
+
+
+
 
 }
