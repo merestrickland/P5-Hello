@@ -17,8 +17,11 @@
 
 function setup() {
   let canvas = createCanvas(1000, 500);
+  // let canvas = createCanvas(windowWidth, windowHeight);
+
   canvas.center()
-  frameRate(3)
+  // resizeCanvas(windowWidth, windowHeight);
+  // frameRate(3)
   
   
   // createCanvas(1024, 768)
@@ -53,7 +56,8 @@ function draw() {
 // Four-part drawing with a different line direction in each part.
 
 //Text
-
+// textSize(32);
+// text('Wall Drawing #17', 10, 90);
 
 //VERTICAL LINES
 const vertical = () => {
